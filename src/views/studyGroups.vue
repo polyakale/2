@@ -1,34 +1,36 @@
 <template>
-  <div class="row text-center">
-    <div class="col-6 p-2 my-table">
+  <div class="row text-center text-color">
+    <div class="col-6 my-table">
       <table>
         <thead>
-          <th>Student</th>
-          <th>Class</th>
-          <th>Study group</th>
+          <tr>
+            <th>Student</th>
+            <th>Class</th>
+            <th>Study Group</th>
+          </tr>
         </thead>
         <tbody>
-          <tr v-for="(student, i) in students" :key="i">
-            <td scope="col">{{ student.name }}</td>
-            <td scope="col">{{ student.class }}</td>
-            <td scope="col">
-              <select
-                class="form-select"
-                v-model="student.studyGroupId"
-              >
-                <option
-                  v-for="(studyGroup, i) in studyGroups"
-                  :key="i"
-                  :value="studyGroup.id"
-                >
-                  {{ studyGroup.name }}
-                </option>
-              </select>
+          <tr v-for="student in students" :key="student.id">
+            <td>{{ student.name }}</td>
+            <td>{{ student.class }}</td>
+            <td>
+              <div class="select-wrapper">
+                <select class="form-select" v-model="student.studyGroupId">
+                  <option
+                    v-for="studyGroup in studyGroups"
+                    :key="studyGroup.id"
+                    :value="studyGroup.id"
+                  >
+                    {{ studyGroup.name }}
+                  </option>
+                </select>
+              </div>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
+
     <div class="col-6">
       <studyGroupCard
         v-for="studyGroup in studyGroups"
