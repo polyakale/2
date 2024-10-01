@@ -3,7 +3,7 @@
     <h3>{{ studyGroup.name }}</h3>
     <div class="card-body">
       <span v-for="(student, i) in StudyGroupStudent" :key="i" :value="student.id"
-        >{{ student.name }}<span>, </span>
+        >{{ student.name }}<span> | </span>
       </span>
     </div>
   </div>
