@@ -1,0 +1,9 @@
+.my-title {
+    text-align: center;
+    border-bottom: 2px solid rgba(3, 0, 0, 0.5);
+}
+
+.my-table {
+    width: 100%;
+    border-right: 2px dashed rgba(63, 199, 0, 0.4);
+}
