@@ -1,7 +1,7 @@
 <template>
   <div class="row text-center">
-    <div class="col-6">
-      <table class="my-table">
+    <div class="col-6 p-2 my-table">
+      <table>
         <thead>
           <th>Student</th>
           <th>Class</th>
@@ -12,11 +12,14 @@
             <td scope="col">{{ student.name }}</td>
             <td scope="col">{{ student.class }}</td>
             <td scope="col">
-              <select>
+              <select
+                class="form-select"
+                v-model="student.studyGroupId"
+              >
                 <option
                   v-for="(studyGroup, i) in studyGroups"
                   :key="i"
-                  value=""
+                  :value="studyGroup.id"
                 >
                   {{ studyGroup.name }}
                 </option>
@@ -28,7 +31,10 @@
     </div>
     <div class="col-6">
       <studyGroupCard
-      
+        v-for="studyGroup in studyGroups"
+        :key="studyGroup.id"
+        :studyGroup="studyGroup"
+        :students="students"
       />
     </div>
   </div>

@@ -1,16 +1,22 @@
 <template>
   <div class="card">
+    <h3>{{ studyGroup.name }}</h3>
     <div class="card-body">
-      <h1 class="card-title" v-for="(studyGroup,i) in studyGroups" :key="i">{{studyGroup.name}}</h1>
-      <span v-for="(student, i) in students" :key="i" :value="student.studyGroupId">{{ student.name }}</span>
+      <span v-for="(student, i) in StudyGroupStudent" :key="i" :value="student.id"
+        >{{ student.name }}<span>, </span>
+      </span>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["studyGroups", "students"],
-  computed: {},
+  props: ["studyGroup", "students"],
+  computed: {
+    StudyGroupStudent(){
+      return this.students.filter(g => g.studyGroupId == this.studyGroup.id)
+    }
+  },
 };
 </script>
 
