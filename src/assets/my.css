@@ -1,218 +1,111 @@
 /* Background */
 .bg {
-    background: linear-gradient(135deg, #2C3E50, #4B79A1); /* Gradient background */
+    background: linear-gradient(135deg, #383838, #081a29);
     height: 100%;
 }
 
-/* General Styles */
-body {
-    margin: 0;
-    height: 100vh; /* Full viewport height */
-    background: #1C1C1C; /* Dark background for body */
-    font-family: 'Helvetica Neue', Arial, sans-serif; /* Elegant font */
-    color: #ECF0F1; /* Default text color */
-    line-height: 1.6; /* Improved readability */
-}
-
-/* /* Table Styles */
-.my-table {
-    max-height: calc(100vh - 150px); /* Adjust height based on title and other elements */
-    overflow-y: auto; /* Allow vertical scrolling */
-    border-radius: 10px; /* Match card radius */
-    background: rgba(52, 73, 94, 0.9); /* Dark background with opacity */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Deeper shadow for depth */
-    margin: 0; /* Remove margin */
-}
-
-/* Table Header */
-.my-table th {
-    background-color: #1ABC9C; /* Distinct header background */
-    color: #ECF0F1; /* Header text color */
-    font-weight: bold; /* Bold header text */
-    padding: 15px; /* Padding inside header cells */
-    text-align: left; /* Align text to the left */
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Subtle bottom border */
-}
-
-/* Table Body */
-.my-table table {
-    width: 100%; /* Full width of parent */
-    border-collapse: collapse; /* For better styling */
-    margin: 0; /* Ensure no margin */
-}
-
-.my-table td {
-    padding: 15px; /* Increased padding for table cells */
-    text-align: left; /* Align text to the left */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Clean, subtle cell borders */
-    transition: background-color 0.3s; /* Smooth background transition */
-}
-
-/* Alternating Row Colors */
-.my-table tr:nth-child(even) td {
-    background-color: rgba(52, 73, 94, 0.8); /* Darker background for even rows */
-}
-
-.my-table tr:nth-child(odd) td {
-    background-color: rgba(39, 32, 134, 0.8); /* Slightly lighter for odd rows */
-}
-
-/* Hover Effect */
-.my-table tr:hover td {
-    background-color: rgba(30, 30, 30, 0.9); /* Highlight row on hover */
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .my-table th, .my-table td {
-        padding: 10px; /* Adjust padding for smaller screens */
-    }
-
-    .my-table th {
-        font-size: 1.2rem; /* Slightly smaller header font */
-    }
-
-    .my-table td {
-        font-size: 1rem; /* Slightly smaller cell font */
-    }
-}
- */
-
 /* Title Styles */
 h1 {
-    text-align: center; /* Center the title */
-    color: #ECF0F1!important; /* Title text color */
-    border-bottom: 3px solid #1ABC9C; /* Thicker bottom border style */
-    padding-bottom: 15px; /* Space between text and border */
-    margin: 20px 0; /* Margin to space it from other elements */
-    font-size: 2.5rem; /* Larger title */
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7); /* Enhanced shadow for depth */
-    animation: fadeIn 0.5s ease; /* Fade-in animation */
+    text-align: center;
+    color: #9bd4e2!important;
+    border-bottom: 3px solid #DAA520;
+    padding-bottom: 15px;
+    margin: 20px 0;
+    font-size: 2.5rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.5s ease;
 }
 
-/* App Layout */
-#app {
-    height: calc(100vh - 60px); /* Adjust for title height */
-}
-
-/* Table Styles */
-.my-table {
-    max-height: calc(100vh - 150px); /* Adjust height based on title and other elements */
-    overflow-y: auto; /* Allow vertical scrolling */
-    border-radius: 10px; /* Match card radius */
-    background: rgba(52, 73, 94, 0.9); /* Dark background with opacity */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Deeper shadow for depth */
-    margin: 0; /* Remove margin */
-    animation: fadeIn 0.5s ease; /* Fade-in animation */
-}
-
-.my-table table {
-    width: 100%; /* Full width of parent */
-    border-collapse: collapse; /* For better styling */
-    margin: 0; /* Ensure no margin */
-}
-
-.my-table th,
-.my-table td {
-    padding: 15px; /* Increased padding for table cells */
-    text-align: left; /* Align text to the left */
-    border: none; /* Remove borders for a cleaner look */
-    transition: background-color 0.3s; /* Smooth background transition */
-}
-
-.my-table th {
-    background-color: rgba(39, 32, 134, 0.8); /* Header background */
-    color: #ECF0F1; /* Header text color */
-    font-weight: bold; /* Bold header text */
-}
-
-.my-table td {
-    background-color: rgba(52, 73, 94, 0.9); /* Match card background */
-    color: #ECF0F1; /* Light text color */
-}
-
-/* Form Select Styles */
 .select-wrapper {
     position: relative; /* Position for the pseudo-element */
     width: 100%; /* Full width */
 }
 
-.my-table .form-select {
-    background-color: rgba(0, 0, 0, 0.7); /* Darker background for select */
-    color: #ECF0F1; /* Light text color */
-    border: 2px solid #1ABC9C; /* Accent border */
-    padding: 12px 40px 12px 12px; /* Adjust padding for more space */
-    border-radius: 10px; /* Rounded corners */
-    appearance: none; /* Remove default styles */
-    cursor: pointer;
-    width: 100%; /* Full width */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
-    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+/* Table Styles */
+.my-table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: calc(100vh - 150px);
+    overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    margin: 0;
+    animation: fadeIn 0.5s ease;
 }
 
+.my-table table {
+    width: 100%;
+}
+
+/* Header and cell borders */
+.my-table th,
+.my-table td {
+    padding: 15px;
+    transition: background-color 0.3s;
+    border: 2px solid #DAA520; /* Border for cells */
+}
+
+.my-table th {
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    color: #ECF0F1;
+    font-weight: bold;
+}
+
+.my-table td {
+    background-color: rgba(43, 43, 43, 0.9);
+    text-align: center;
+    color: #ECF0F1;
+}
+
+.form-select {
+    -webkit-appearance: none; /* Remove default styles for WebKit browsers */
+    -moz-appearance: none; /* Remove default styles for Firefox */
+    appearance: none; /* Remove default styles */
+}
+.my-table .form-select {
+    position: relative; /* Necessary for positioning the ::after element */
+    background-color: rgba(14, 14, 14, 0.9);
+    color: #ECF0F1;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+}
 .my-table .form-select:hover {
     background-color: rgba(1, 1, 1, 0.8); /* Slightly darker on hover */
 }
-
-/* Arrow Icon for Select */
-.my-table .form-select::after {
-    content: '⯆'; /* Down arrow */
-    position: absolute;
-    right: 15px; /* Adjust position */
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%); /* Center adjustment */
-    font-size: 16px; /* Arrow size */
-    color: #1ABC9C; /* Arrow color */
-    pointer-events: none; /* Prevent interference with clicks */
+.my-table .form-select:focus {
+    outline: 2px solid ; /* Focus outline */
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly darker background on focus */
 }
 
 /* Card Styles */
 .card {
-    border-radius: 10px; /* Rounded corners */
+    color: white!important;
+    background: rgba(0, 0, 0, 0.8)!important;
+    border: 2px solid #DAA520!important;
     overflow: hidden; /* Ensure content fits within the card */
-    background: rgba(52, 73, 94, 0.9); /* Match table background */
-    color: #ECF0F1; /* Light text color */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow effect */
     transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
     margin: 10px; /* Closer margins */
     padding: 15px; /* Improved padding inside the card */
     animation: fadeIn 0.5s ease; /* Fade-in animation */
 }
-
-.card:hover {
-    transform: scale(1.05); /* Slight scale up on hover for an interactive effect */
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7); /* Enhance shadow on hover */
-}
-
 .card-header {
-    border-bottom: 2px solid #1ABC9C; /* Accent color for header underline */
-    padding: 10px; /* Reduced padding for header */
-    text-align: left; /* Align the header text */
-    font-size: 1.5rem; /* Slightly larger font size */
-    font-weight: bold; /* Bold header */
+        border-bottom: 2px solid #DAA520!important; /* Border color */
+        padding: 10px; /* Padding for content */
+        text-align: left; /* Align text */
+        margin-left: -15px; /* Negative margin to stretch border */
+        margin-right: -15px; /* Negative margin to stretch border */
+        width: calc(100% + 30px); /* Expand width */
 }
-
-/* Card Body Styles */
-.card-body {
-    display: flex; /* Flexbox for layout */
-    flex-direction: column; /* Stack children vertically */
-    padding: 5px; /* Padding inside the card body */
+.card:hover {
+    transform: translateY(-2px); /* Reduced hover effect */
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5); /* Less pronounced shadow */
 }
 
 .student-item {
     padding: 5px; /* Padding for each student */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Separator line */
-    transition: background-color 0.3s; /* Smooth background transition */
-}
-
-/* Remove last item's border */
-.student-item:last-child {
-    border-bottom: none; /* Remove bottom border from last item */
-}
-
-/* Hover Effect for Student Items */
-.student-item:hover {
-    background-color: rgba(30, 30, 30, 0.8); /* Darker background on hover */
 }
 
 /* Responsive Adjustments */
