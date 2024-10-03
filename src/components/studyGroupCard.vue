@@ -20,7 +20,8 @@ export default {
   props: ["studyGroup", "students"],
   computed: {
     StudyGroupStudent() {
-      return this.students.filter((g) => g.studyGroupId === this.studyGroup.id);
+      return this.students
+      .filter((g) => g.studyGroupId === this.studyGroup.id);
     },
   },
 };
