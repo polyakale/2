@@ -1,13 +1,14 @@
 /* Background */
 .bg {
-    height: 100vh;
+    height: 100vh; /* Cover full viewport height */
     background: linear-gradient(135deg, #07330d, #03072e);
+    background-size: cover; /* Prevents repeating */
+    background-attachment: fixed; /* Optional: creates a nice scrolling effect */
 }
-
+/* The font for page */
 .my-text {
     font-family: 'Courier New';
 }
-
 /* Title Styles */
 h1 {
     margin: 20px 0;
@@ -20,13 +21,36 @@ h1 {
     border-bottom: 3px solid #00be75;
     text-shadow: 0 7px 10px rgba(9, 160, 47, 0.7);
 }
-
+/* Shuffling */
+.shuffle-container {
+    display: flex;
+    margin-top: -23px;
+    justify-content: flex-end;
+}
 .shuffle-button {
     cursor: pointer;
-    padding: 0px;
 }
 .shuffle-button:hover {
     color: rgb(150, 150, 150);
+}
+
+/* New Student */
+.more-student-container{
+    display: flex;
+    margin-top: -24px;
+    justify-content: flex-end;
+}
+.add-student-button {
+    cursor: pointer;
+}
+.add-student-button:hover {
+    color: rgb(150, 150, 150);
+}
+/* Modal */
+.modal-content {
+    color: white !important;
+    border: 2px solid #008a55;
+    background-color: rgba(37, 37, 37, 0.9) !important;
 }
 
 .select-wrapper {
@@ -62,7 +86,7 @@ h1 {
 .my-table th {
     color: #ECF0F1;
     font-weight: bold;
-    text-align: center;
+    align-items: center;
     background-color: rgba(0, 0, 0, 0.7);
 }
 
@@ -91,14 +115,22 @@ h1 {
 .card {
     margin: 10px; /* Closer margins */
     padding: 15px; /* Improved padding inside the card */
+    display: flex;
+    overflow-y: auto; 
     overflow: hidden; /* Ensure content fits within the card */
     color: white!important;
-    animation: fadeIn 0.5s ease; /* Fade-in animation */
+    animation: fadeIn 0.3s ease; /* Fade-in animation */
     border: 2px solid #00be75!important;
     text-shadow: 0 1px 6px rgb(0, 204, 255); 
     background: rgba(0, 0, 0, 0.8)!important;
     transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow effect */
+}
+.card-container {
+    max-height: calc(100vh - 150px); /* Adjust based on your layout */
+    overflow-y: auto; /* Allow vertical scrolling */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    padding: 10px; /* Optional padding */
 }
 .card-header {
     text-align: left; /* Align text */

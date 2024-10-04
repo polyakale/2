@@ -4,11 +4,27 @@
       <table>
         <thead>
           <tr>
-            <th>Student</th>
+            <th>
+              Student
+              <div class="more-student-container">
+                <i
+                  class="bi bi-plus-circle add-student-button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#newStudentModal"
+                  @click="createNewStudent()"
+                ></i>
+              </div>
+            </th>
             <th>Class</th>
-            <th>Study Group <i class="bi bi-shuffle shuffle-button"
-              @click="RandomStudentStudyGroupId()"
-              ></i></th>
+            <th>
+              Study Group
+              <div class="shuffle-container">
+                <i
+                  class="bi bi-shuffle shuffle-button"
+                  @click="RandomStudentStudyGroupId()"
+                ></i>
+              </div>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -33,7 +49,7 @@
       </table>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6 card-container">
       <studyGroupCard
         v-for="studyGroup in studyGroups"
         :key="studyGroup.id"
@@ -42,10 +58,19 @@
       />
     </div>
   </div>
+  <newStudentModal
+    :title="'New Student'"
+    :yes="'Yes'"
+    :no="'No'"
+    @someKindOfAction="newStudentAdd"
+  >
+    <div>Hello</div>
+  </newStudentModal>
 </template>
 
 <script>
 import studyGroupCard from "@/components/studyGroupCard.vue";
+import newStudentModal from "@/components/newStudentModal.vue";
 export default {
   data() {
     return {
@@ -74,10 +99,15 @@ export default {
   },
   methods: {
     RandomStudentStudyGroupId() {
-      return this.students.studyGroupId == Math.floor(Math.random() * (this.studyGroups.length)) + 1;
-    }
+      this.students.forEach((student) => {
+        student.studyGroupId =
+          Math.floor(Math.random() * this.studyGroups.length) + 1;
+      });
+    },
+    createNewStudent() {},
   },
   components: {
+    newStudentModal,
     studyGroupCard,
   },
 };
