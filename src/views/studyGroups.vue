@@ -1,12 +1,14 @@
 <template>
-  <div class="row text-center text-color">
+  <div class="row text-center">
     <div class="col-md-6 my-table">
       <table>
         <thead>
           <tr>
             <th>Student</th>
             <th>Class</th>
-            <th>Study Group</th>
+            <th>Study Group <i class="bi bi-shuffle shuffle-button"
+              @click="RandomStudentStudyGroupId()"
+              ></i></th>
           </tr>
         </thead>
         <tbody>
@@ -58,16 +60,8 @@ export default {
         { id: 8, name: "Olivia Taylor", class: "11.B", studyGroupId: 1 },
         { id: 9, name: "Sophia Martinez", class: "9.A", studyGroupId: 1 },
         { id: 10, name: "Daniel Anderson", class: "12.C", studyGroupId: 1 },
-        { id: 11, name: "Emily Thomas", class: "10.B", studyGroupId: 1 },
+        { id: 11, name: "Anna Thomas", class: "10.B", studyGroupId: 1 },
         { id: 12, name: "Jacob Jackson", class: "11.B", studyGroupId: 1 },
-        { id: 13, name: "Ava White", class: "9.A", studyGroupId: 1 },
-        { id: 14, name: "Isabella Harris", class: "13.D", studyGroupId: 1 },
-        { id: 15, name: "Mason Clark", class: "12.C", studyGroupId: 1 },
-        { id: 16, name: "Liam Lewis", class: "10.B", studyGroupId: 1 },
-        { id: 17, name: "Charlotte Lee", class: "9.A", studyGroupId: 1 },
-        { id: 18, name: "Noah Hall", class: "11.B", studyGroupId: 1 },
-        { id: 19, name: "Lucas Allen", class: "13.D", studyGroupId: 1 },
-        { id: 20, name: "Mia Young", class: "12.C", studyGroupId: 1 },
       ],
       studyGroups: [
         { id: 1, name: "No study group" },
@@ -77,6 +71,11 @@ export default {
         { id: 5, name: "Mobile App Development" },
       ],
     };
+  },
+  methods: {
+    RandomStudentStudyGroupId() {
+      return this.students.studyGroupId == Math.floor(Math.random() * (this.studyGroups.length)) + 1;
+    }
   },
   components: {
     studyGroupCard,

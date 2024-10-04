@@ -1,36 +1,49 @@
 /* Background */
 .bg {
+    height: 100vh;
     background: linear-gradient(135deg, #07330d, #03072e);
+}
+
+.my-text {
+    font-family: 'Courier New';
 }
 
 /* Title Styles */
 h1 {
-    text-align: center;
-    color: #26e9cf!important;
-    border-bottom: 3px solid #00be75;
-    text-align: left;
-    padding-bottom: 15px;
     margin: 20px 0;
+    text-align: left;
     font-size: 2.5rem;
-    text-shadow: 0 7px 10px rgba(9, 160, 47, 0.7);
+    padding-bottom: 15px;
+    color: #26e9cf!important;
     animation: fadeIn 0.5s ease;
+    font-weight: bold!important;
+    border-bottom: 3px solid #00be75;
+    text-shadow: 0 7px 10px rgba(9, 160, 47, 0.7);
+}
+
+.shuffle-button {
+    cursor: pointer;
+    padding: 0px;
+}
+.shuffle-button:hover {
+    color: rgb(150, 150, 150);
 }
 
 .select-wrapper {
-    position: relative; /* Position for the pseudo-element */
     width: 100%; /* Full width */
+    position: relative; /* Position for the pseudo-element */
 }
 
 /* Table Styles */
 .my-table {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-height: calc(100vh - 150px);
-    overflow-y: auto;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     margin: 0;
+    display: flex;
+    overflow-y: auto;
+    align-items: center;
+    flex-direction: column;
     animation: fadeIn 0.5s ease;
+    max-height: calc(100vh - 150px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .my-table table {
@@ -40,64 +53,63 @@ h1 {
 /* Header and cell borders */
 .my-table th,
 .my-table td {
-    padding: 10px;
+    padding: 5px;
+    border: 2px solid #008a55;
     transition: background-color 0.3s;
-    border: 2px solid #00be75; /* Border for cells */
+    text-shadow: 0 2px 4px rgb(0, 240, 20);
 }
 
 .my-table th {
-    background-color: rgba(0, 0, 0, 0.7);
-    text-shadow: 0 1px 6px rgba(0, 255, 21, 0.705);
-    text-align: center;
     color: #ECF0F1;
     font-weight: bold;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .my-table td {
-    background-color: rgba(43, 43, 43, 0.9);
-    text-align: center;
     color: #ECF0F1;
-}
-
-.form-select {
-    -webkit-appearance: none; /* Remove default styles for WebKit browsers */
-    -moz-appearance: none; /* Remove default styles for Firefox */
-    appearance: none; /* Remove default styles */
+    text-align: center;
+    background-color: rgba(43, 43, 43, 0.9);
 }
 .my-table .form-select {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    color: #ECF0F1;
     position: relative; /* Necessary for positioning the ::after element */
     background-color: rgba(14, 14, 14, 0.9);
-    color: #ECF0F1;
-    border: none;
-    width: 100%;
-    cursor: pointer;
 }
 .my-table .form-select:hover {
     background-color: rgba(1, 1, 1, 0.8); /* Slightly darker on hover */
 }
 .my-table .form-select:focus {
     outline: 2px solid ; /* Focus outline */
-    background-color: rgba(0, 0, 0, 0.8); /* Slightly darker background on focus */
+    background-color: rgb(6, 34, 0); /* Slightly darker background on focus */
 }
 
 /* Card Styles */
 .card {
-    color: white!important;
-    background: rgba(0, 0, 0, 0.8)!important;
-    border: 2px solid #00be75!important;
-    overflow: hidden; /* Ensure content fits within the card */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow effect */
-    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
     margin: 10px; /* Closer margins */
     padding: 15px; /* Improved padding inside the card */
+    overflow: hidden; /* Ensure content fits within the card */
+    color: white!important;
     animation: fadeIn 0.5s ease; /* Fade-in animation */
+    border: 2px solid #00be75!important;
+    text-shadow: 0 1px 6px rgb(0, 204, 255); 
+    background: rgba(0, 0, 0, 0.8)!important;
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow effect */
 }
 .card-header {
-    border-bottom: 2px solid #00be75!important; /* Border color */
     text-align: left; /* Align text */
+    font-weight: bold!important;
     margin-left: -15px; /* Negative margin to stretch border */
     margin-right: -15px; /* Negative margin to stretch border */
     width: calc(100% + 30px); /* Expand width */
+    border-bottom: 2px solid #00eb91!important; /* Border color */
+}
+.card-title {
+    font-weight: bold;
 }
 .card:hover {
     transform: translateY(-2px); /* Reduced hover effect */

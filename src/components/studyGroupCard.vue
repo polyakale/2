@@ -21,7 +21,8 @@ export default {
   computed: {
     StudyGroupStudent() {
       return this.students
-      .filter((g) => g.studyGroupId === this.studyGroup.id);
+      .filter((g) => g.studyGroupId === this.studyGroup.id)
+      .sort((a,b) => a.name.localeCompare(b.name));
     },
   },
 };
